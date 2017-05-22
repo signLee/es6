@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let arr=[1,[2.1,2.2],3];
+   let [a,[b1],c]=arr;
+   console.log(a,b1,c);
+   let arr1=[1,,,2,4,5,,4];
+   let [,,,a1,b2]=arr1;
+   console.log(a1,b2)
+
+    let arr2=[1,2,3,4,5,6];
+    let [q,w,,...other]=arr2;
+    console.log(q,w,other)
+
+
+    let arr3=[46,33];
+    let [r,t,y]=arr3;
+    console.log(r,t,y);
+
+
+    let user={"name":"sign","age":25}
+    let {name,age}=user;
+    let {name:myname,age:myage}=user;
+    console.log(name,age,myname,myage);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<script>
+    (function () {
+        window._smConf = {
+            organization: '4QHO5wdebwuYd1TeuEY3',
+            staticHost: 'static.fengkongcloud.com'
+        }
+        var sm = document.createElement("script");
+        sm.src = ('https:' === document.location.protocol ? 'https:' : 'http:') + '//' + _smConf.staticHost + '/fpv2.js';
+        var s = document.getElementsByTagName("script")[0];//引用数美sdk
+        s.parentNode.insertBefore(sm, s);
+        function setCookie(name,value)
+        {
+            var Minutes = 5;//cookie过期时间 分钟
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Minutes*60*1000);
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        }
+        //判断从外部引入的js是否加载完毕
+        sm.onload = sm.onreadystatechange = function () {
+            if (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') {
+                alert('done');
+                var deviceId = SMSdk.getDeviceId();
+                setCookie("deviceId",deviceId);
+            }
+            sm.onload = sm.onreadystatechange = null;
+        }
+    })();
+
+</script>
+</body>
+</html>

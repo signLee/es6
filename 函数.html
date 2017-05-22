@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function add(a,b=2){
+        return a+b;
+   }
+   let no1=add(2,5);//7
+   let no2=add(2)//4
+    console.log(no1);
+    console.log(no2);
+
+    function print(a,b,c) {
+        console.log(a,b,c)
+    }
+    print([1,2,3])//[1, 2, 3] undefined undefined
+    print(...[1,2,3])//1 2 3
+
+    function rest(a,...b) {
+        console.log(a,b)
+    }
+    rest(1,2,3)//1 [2, 3]
+
+    function ajax({methods="get",url="www.baidu.com"}={}){
+        console.log(methods,url);
+    }
+    ajax();
+    ajax({methods:"post",url:"www.google.com"});
+
+    [1,2,3,4].forEach(val=>{console.log(val)});
+
+    let opeart={
+        'user':'sign',
+        action:function(){
+            setTimeout(function(){alert(this)},1000)
+            setTimeout(()=>alert(this.user),1000)
+        }
+    }
+   opeart.action();
+</script>
+</body>
+</html>

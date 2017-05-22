@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function testPromise(ready) {
+        return new Promise(function(resolve,reject){
+            if(ready) {
+                resolve("hello world");
+            }else {
+                reject("No thanks");
+            }
+        });
+    };
+    // 方法调用
+    testPromise(false).then(function(msg){
+        console.log(msg);
+    },function(error){
+        console.log(error);
+    });*/
+    
+    
+//    function  testPromise1(ready) {
+//        return new Promise(function(resolve,reject){
+//            if(ready){
+//                resolve('成功了')
+//            }else{
+//                reject("失败了");
+//            }
+//        }).then(function(msg){
+//            alert(msg)
+//        },function(error){
+//            console.log(error);
+//        })
+//    }
+//    testPromise1(true)
+    function testPromise(ready){
+        return new Promise((resolve,reject)=>{
+            if(ready){
+                resolve("成功了");
+            }else{
+                reject("失败了");
+            }
+        }).then(
+            (msg)=>{
+                alert(msg);
+            },
+            (err)=>{
+                alert(err);
+            }
+        );
+    }
+    testPromise(false);
+</script>
+</body>
+</html>

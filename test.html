@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            font-size:100px;
+        }
+        #div1{
+            width:1rem;
+            height:2rem;
+            border:1px solid #ccc;
+            background:red;
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    window.onresize = function(){
+        (function(doc, win) {
+            var docEl = doc.documentElement;
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+            var recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if(!clientWidth) return;
+                docEl.style.fontSize = 50 * ((clientWidth >= 750 ? 750 : clientWidth) / 320) + 'px';
+                /*docEl.style.fontSize = 50 * (clientWidth / 320) + 'px';*/
+            };
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    };
+</script>
+</body>
+</html>
