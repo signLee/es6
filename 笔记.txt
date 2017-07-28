@@ -1,6 +1,6 @@
 
-let ÃüÁî
-let£º  letÀïµÄ±äÁ¿Ö»ÄÜÊÇletÃüÁîËùÔÚµÄ´úÂë¿éÄÚÓĞĞ§  ÀàËÆÓÚforÑ­»·ÀïµÄiÖ»ÔÚforÀïÓĞÓÃ
+let å‘½ä»¤
+letï¼š  leté‡Œçš„å˜é‡åªèƒ½æ˜¯letå‘½ä»¤æ‰€åœ¨çš„ä»£ç å—å†…æœ‰æ•ˆ  ç±»ä¼¼äºforå¾ªç¯é‡Œçš„iåªåœ¨foré‡Œæœ‰ç”¨
 EG:
 {
     let a=666;
@@ -9,29 +9,29 @@ EG:
     console.log(c);
 }
 console.log(b);//123
-console.log(a);//±¨´í
+console.log(a);//æŠ¥é”™
 
-ES6±äÁ¿ºÍº¯Êı²»´æÔÚÔ¤½âÊÍ ´øvar µÄ²Å»áÏÈ¸³Öµundefind
+ES6å˜é‡å’Œå‡½æ•°ä¸å­˜åœ¨é¢„è§£é‡Š å¸¦var çš„æ‰ä¼šå…ˆèµ‹å€¼undefind
 console.log(a);//undefinded
-console.log(b);//±¨´í
+console.log(b);//æŠ¥é”™
     let b=2;
     var a=3;
-Èç¹ûÍ¬Ò»¸ö×÷ÓÃ¿éÄÚÓÃlet¶¨ÒåµÄ±äÁ¿ÖØÃû»á±¨´í
+å¦‚æœåŒä¸€ä¸ªä½œç”¨å—å†…ç”¨letå®šä¹‰çš„å˜é‡é‡åä¼šæŠ¥é”™ ä¸åŒçš„ä½œç”¨å—å¯ä»¥é‡å
 let a=2;
 let a=5;
-console.log(a);//±¨´í
+console.log(a);//æŠ¥é”™
 
 
-const¶¨Òå³£Á¿
-a ³£Á¿Ò»µ©¶¨Òå²»ÄÜĞŞ¸Ä
+constå®šä¹‰å¸¸é‡
+a å¸¸é‡ä¸€æ—¦å®šä¹‰ä¸èƒ½ä¿®æ”¹
 const a='test';
 a='adf';
-console.log(a);//±¨´í
-b ±äÁ¿¿ÉÒÔÖØĞÂ¸³Öµ
+console.log(a);//æŠ¥é”™
+b å˜é‡å¯ä»¥é‡æ–°èµ‹å€¼
 const a=['str'];
 a.push('bbb');
  console.log(a);//["str", "bbb"]
-c:²»Í¬¿é¼¶×÷ÓÃÓò¿ÉÒÔ¶à´Î¶¨Òå
+c:ä¸åŒå—çº§ä½œç”¨åŸŸå¯ä»¥å¤šæ¬¡å®šä¹‰
 const  a='a'
 {
     const a='b';
@@ -42,37 +42,74 @@ const  a='a'
     console.log(a);//c
 }
 console.log(a);//a
+freezeå¯¹è±¡å†»ç»“ï¼š---------å½»åº•å†»ç»“ä¸€ä¸ªå¯¹è±¡  åæœŸæ— æ³•æ”¹å˜
+const person=Object.freeze({name:"sign",age:22});
+person.name="aaa";console.log(person.name)
+=====> sign
 
-½â¹¹¸³Öµ
-×÷ÓÃ£º
-1.±äÁ¿µÄÅúÁ¿¸³Öµ
-2.°ÑÓÒ²àµÄÊı¾İÀàĞÍ¸³Öµµ½×ó²à¹¹ÔìÏàËÆµÄÊı¾İÀàĞÍÖĞ
 
-a ½âÎöÊı×é
+
+è§£æ„èµ‹å€¼
+ä½œç”¨ï¼š
+1.å˜é‡çš„æ‰¹é‡èµ‹å€¼
+2.æŠŠå³ä¾§çš„æ•°æ®ç±»å‹èµ‹å€¼åˆ°å·¦ä¾§æ„é€ ç›¸ä¼¼çš„æ•°æ®ç±»å‹ä¸­
+3 äº¤æ¢èµ‹å€¼
+eg: 
+var a=100;
+var b=200;
+[x,y]=[y,x];
+console.log(x)   200
+console.log(y)   100
+ä»è¿”å›å€¼ä¸­å–æŸä¸€ä¸ªå€¼ï¼š
+eg:
+function fun(){
+return [1,2,3]
+}
+var [x,y,z]=fun();
+console.log(x);
+console.log(y);
+console.log(z);
+å»jsonçš„å€¼åŒç†
+function fun(){
+return {
+nam:"sign",
+age:"20"
+}
+}
+var {id,name,age}=fun();
+console.log(id);
+console.log(name);
+console.log(age);
+
+
+
+
+
+a è§£ææ•°ç»„
 let["name","age"]=["sign",25]
 console.log(name,age)// sign  25
 
-bÇ¶Ì×¸³Öµ
+båµŒå¥—èµ‹å€¼
 let arr=[1,[2.1,2.2],3];
 let [a,c]=arr;
-console.log(a,c);// 1 [2.1,2.2]  °´Ë³ĞòÀ´µÄ
+console.log(a,c);// 1 [2.1,2.2]  æŒ‰é¡ºåºæ¥çš„
 
-cÇ¶Ì×¸³Öµ
+cåµŒå¥—èµ‹å€¼
 let arr=[1,[2.1,2.2],3];
 let [a,[b1],c]=arr;
 console.log(a,b1,c);//1 2.1 3
 
-dÊ¡ÂÔ¸³Öµ
+dçœç•¥èµ‹å€¼
 let arr1=[1,,,2,4,5,,4];
-let [ ,,,a1,b2 ]=arr1;
+let [,,,a1,b2]=arr1;
 console.log(a1,b2)//2  4
 
-e²»¶¨¸³Öµ
+eä¸å®šèµ‹å€¼
 let arr2=[1,2,3,4,5,6];
 let [q,w,,...other]=arr2;
-console.log(q,w,other)  //1 2 [4, 5, 6]  ¶àÓàµÄ»á±»·Åµ½Ò»¸öÊı×éÀï
+console.log(q,w,other)  //1 2 [4, 5, 6]  å¤šä½™çš„ä¼šè¢«æ”¾åˆ°ä¸€ä¸ªæ•°ç»„é‡Œ
 
-fÔ½½ç---³¬³ö¶¨ÒåµÄ³¤¶È
+fè¶Šç•Œ---è¶…å‡ºå®šä¹‰çš„é•¿åº¦
 let arr3=[46,33];
 let [r,t,y]=arr3;
 console.log(r,t,y);// 46 33 undefined
@@ -82,57 +119,57 @@ let {name,age}=user;
 let {name:myname,age:myage}=user;
 console.log(name,age,myname,myage);// sign 25 sign 25
 
-Ä£°å×Ö·û´®------------×¢ÒâÊ¹ÓÃµÄÊÇ·´Æ²ºÅ
-let name =`sign`;
+æ¨¡æ¿å­—ç¬¦ä¸²------------æ³¨æ„ä½¿ç”¨çš„æ˜¯åæ’‡å·
+let name=`sign`;
 let age=25;
 let info=`my name is ${name} age is ${age}`;
 console.log(info);//my name is sign age is 25
-×Ö·û´®Ä£°åÀïµÄ»»ĞĞ
+å­—ç¬¦ä¸²æ¨¡æ¿é‡Œçš„æ¢è¡Œ
 
 
-×Ö·û´®ĞÂ·½·¨£º
-includes()£º·µ»Ø²¼¶ûÖµ£¬±íÊ¾ÊÇ·ñÕÒµ½ÁË²ÎÊı×Ö·û´®¡£
-startsWith()£º·µ»Ø²¼¶ûÖµ£¬±íÊ¾²ÎÊı×Ö·û´®ÊÇ·ñÔÚÔ´×Ö·û´®µÄÍ·²¿¡£
-endsWith()£º·µ»Ø²¼¶ûÖµ£¬±íÊ¾²ÎÊı×Ö·û´®ÊÇ·ñÔÚÔ´×Ö·û´®µÄÎ²²¿¡£
+å­—ç¬¦ä¸²æ–°æ–¹æ³•ï¼š
+includes()ï¼šè¿”å›å¸ƒå°”å€¼ï¼Œè¡¨ç¤ºæ˜¯å¦æ‰¾åˆ°äº†å‚æ•°å­—ç¬¦ä¸²ã€‚
+startsWith()ï¼šè¿”å›å¸ƒå°”å€¼ï¼Œè¡¨ç¤ºå‚æ•°å­—ç¬¦ä¸²æ˜¯å¦åœ¨æºå­—ç¬¦ä¸²çš„å¤´éƒ¨ã€‚
+endsWith()ï¼šè¿”å›å¸ƒå°”å€¼ï¼Œè¡¨ç¤ºå‚æ•°å­—ç¬¦ä¸²æ˜¯å¦åœ¨æºå­—ç¬¦ä¸²çš„å°¾éƒ¨ã€‚
 var st="hello";
 str.includes("0");//true
-str.includes("e",1);-------------µÚ¶ş¸ö²ÎÊı±íÊ¾¿ªÊ¼µÄÎ»ÖÃ
-×¢Òâ endWith()ÀïµÄµÚ¶ş¸ö²ÎÊı±íÊ¾Õë¶ÔÇ°N¸ö×Ö·û
+str.includes("e",1);-------------ç¬¬äºŒä¸ªå‚æ•°è¡¨ç¤ºå¼€å§‹çš„ä½ç½®
+æ³¨æ„ endWith()é‡Œçš„ç¬¬äºŒä¸ªå‚æ•°è¡¨ç¤ºé’ˆå¯¹å‰Nä¸ªå­—ç¬¦
 var str="hello";
 console.log(str.endsWith("e",2));//true
 
-º¯Êı£º
-a Ä¬ÈÏ²ÎÊı
-¿ÉÒÔ¸ø¶¨Ä¬ÈÏµÄÖµ£¬Èç¹ûµ÷ÓÃµÄÊ±ºòÓĞ´«Öµ¾ÍÊ¹ÓÃ´«µÄÖµ£¬Ã»ÓĞ´«¾ÍÊ¹ÓÃÄ¬ÈÏµÄÖµ
+å‡½æ•°ï¼š
+a é»˜è®¤å‚æ•°
+å¯ä»¥ç»™å®šé»˜è®¤çš„å€¼ï¼Œå¦‚æœè°ƒç”¨çš„æ—¶å€™æœ‰ä¼ å€¼å°±ä½¿ç”¨ä¼ çš„å€¼ï¼Œæ²¡æœ‰ä¼ å°±ä½¿ç”¨é»˜è®¤çš„å€¼
 function add(a,b=2){
      return a+b;
 }
-let no1= add (2,5);//7
-let no2= add (2)//4
+let no1=add(2,5);//7
+let no2=add(2)//4
 
-b Õ¹¿ª²Ù×÷·û
-°Ñ...·ÅÔÚÊı×éÖ®Ç°¿ÉÒÔÕ¹¿ª ¿ÉÒÔ´úÌæapply
+b å±•å¼€æ“ä½œç¬¦
+æŠŠ...æ”¾åœ¨æ•°ç»„ä¹‹å‰å¯ä»¥å±•å¼€ å¯ä»¥ä»£æ›¿apply
 function print(a,b,c) {
     console.log(a,b,c)
 }
 print([1,2,3])//[1, 2, 3] undefined undefined
 print(...[1,2,3])//1 2 3 
 
-c Ê£Óà²Ù×÷·û
+c å‰©ä½™æ“ä½œç¬¦
 function rest(a,...b) {
     console.log(a,b)
 }
-rest(1,2,3)//1 [2, 3]   ¶àÓàµÄ±»·Åµ½Êı×éÀïÁË
+rest(1,2,3)//1 [2, 3]   å¤šä½™çš„è¢«æ”¾åˆ°æ•°ç»„é‡Œäº†
 
-d ½â¹¹²ÎÊı------------×¢Òâ¸ñÊ½
+d è§£æ„å‚æ•°------------æ³¨æ„æ ¼å¼
 function ajax({methods="get",url="www.baidu.com"}={}){
     console.log(methods,url);
 }
 ajax();//get www.baidu.com
 ajax({methods:"post",url:"www.google.com"});//post www.google.com
 
-e¼ıÍ·º¯Êı
-ÊäÈë²ÎÊıÈç¹ûÓĞ¶à¸öÒªÓÃÀ¨ºÅ°üÆğÀ´£¬Êä³öº¯ÊıÌåÈç¹ûÓĞ¶àĞĞ±ØĞëÓÃ´óÀ¨ºÅ°üÆğÀ´
+eç®­å¤´å‡½æ•°
+è¾“å…¥å‚æ•°å¦‚æœæœ‰å¤šä¸ªè¦ç”¨æ‹¬å·åŒ…èµ·æ¥ï¼Œè¾“å‡ºå‡½æ•°ä½“å¦‚æœæœ‰å¤šè¡Œå¿…é¡»ç”¨å¤§æ‹¬å·åŒ…èµ·æ¥
 
 (input)=>{output}
 
@@ -149,7 +186,7 @@ $("#confetti-btn").click(event => {
 document.onclick=()=>{alert(1)}
 
 
-¼ıÍ·º¯Êı±¾ÉíÃ»ÓĞthis£¬ËüµÄthisÖ¸ÏòÍâÃæµÄthis
+ç®­å¤´å‡½æ•°æœ¬èº«æ²¡æœ‰thisï¼Œå®ƒçš„thisæŒ‡å‘å¤–é¢çš„this
 let opeart={
      'user':'sign',
      action:function(){
@@ -160,68 +197,68 @@ let opeart={
 opeart.action();
 
 
-ĞÂÔöµÄÊı×é·½·¨£º
-1 Arrary.from();-----------½«Ò»¸öÊı×é»òÕßÀàÊı×é×ª³ÉÊı×é  ·µ»ØÒ»¸öĞÂÊı×é ²»»áĞŞ¸ÄÔ­ÓĞÊı×é
+æ–°å¢çš„æ•°ç»„æ–¹æ³•ï¼š
+1 Arrary.from();-----------å°†ä¸€ä¸ªæ•°ç»„æˆ–è€…ç±»æ•°ç»„è½¬æˆæ•°ç»„  è¿”å›ä¸€ä¸ªæ–°æ•°ç»„ ä¸ä¼šä¿®æ”¹åŸæœ‰æ•°ç»„
 var arr=[1,2,3,4,5]
  var arr1=Array.from(arr);
 
-2 Array.of();---½¨Á¢Ò»¸öÊı×é²¢¸³Öµ
+2 Array.of();---å»ºç«‹ä¸€ä¸ªæ•°ç»„å¹¶èµ‹å€¼
 
-let arr2=Array(2);//Ö»Ö¸¶¨ÁË³¤¶È  Ã»¸³Öµ
-let arr3=Array.of(3£¬4);//newÁËÒ»¸öÊı×é[3,4]
+let arr2=Array(2);//åªæŒ‡å®šäº†é•¿åº¦  æ²¡èµ‹å€¼
+let arr3=Array.of(3ï¼Œ4);//newäº†ä¸€ä¸ªæ•°ç»„[3,4]
 console.log(arr2,arr3); // undefind undefind   [3]
 console.log(arr2.length,arr3.length);
 
-3.copyWithin(start£¬begin,end)-------»áĞŞ¸ÄÔ­Êı×é
-copyWithin£¨´Ó¸ÃÎ»ÖÃ¿ªÊ¼Ìæ»»Êı¾İ£¬´ÓÕâÀï¿ªÊ¼¶ÁÈ¡Êı¾İÄ¬ÈÏÎª0Èç¹ûÎª¸ºÊı±íÊ¾µ¹È¡£¬µ½¸ÃÎ»ÖÃÇ°Í£Ö¹¶ÁÈ¡Êı¾İÄ¬ÈÏÎªÊı×é³¤¶È¸ºÊı±íÊ¾µ¹Êı£©
+3.copyWithin(startï¼Œbegin,end)-------éƒ¨åˆ†ä¿®æ”¹æ•°ç»„ä¼šä¿®æ”¹åŸæ•°ç»„
+copyWithinï¼ˆä»è¯¥ä½ç½®å¼€å§‹æ›¿æ¢æ•°æ®ï¼Œä»è¿™é‡Œå¼€å§‹è¯»å–æ•°æ®é»˜è®¤ä¸º0å¦‚æœä¸ºè´Ÿæ•°è¡¨ç¤ºå€’å–ï¼Œåˆ°è¯¥ä½ç½®å‰åœæ­¢è¯»å–æ•°æ®é»˜è®¤ä¸ºæ•°ç»„é•¿åº¦è´Ÿæ•°è¡¨ç¤ºå€’æ•°ï¼‰
 
 var arr=[1,2,3,4,5]
 arr.copyWithin(2,3,4)
 console.log(arr);//[1, 2, 4, 4, 5]
 
-arr.copyWithin(2,3)//²»´«½áÊøÎ»Ä¬ÈÏÈ¡Êı×é³¤¶È
-console.log(arr);//[1, 2, 4, 5, 5] //È¡µ½¼¸¸öÒÀ´ÎÌæ»»¼¸¸ö
+arr.copyWithin(2,3)//ä¸ä¼ ç»“æŸä½é»˜è®¤å–æ•°ç»„é•¿åº¦
+console.log(arr);//[1, 2, 4, 5, 5] //å–åˆ°å‡ ä¸ªä¾æ¬¡æ›¿æ¢å‡ ä¸ª
 
-4 fill()  ÔÚÊı×éÖ¸¶¨Î»ÖÃÌî³äÊı¾İ
-fill(Êı¾İ£¬¿ªÊ¼Î»ÖÃ£¬½áÊøÎ»ÖÃ)
+4 fill()  åœ¨æ•°ç»„æŒ‡å®šä½ç½®å¡«å……æ•°æ®
+fill(æ•°æ®ï¼Œå¼€å§‹ä½ç½®ï¼Œç»“æŸä½ç½®)
 arr.fill("aaaa",2,4)
 console.log(arr); //[1, 2, "aaaa", "aaaa", 5]
 
 5 find/ findIndex
-Êı×éÊµÀıµÄfind·½·¨£¬ÓÃÓÚÕÒ³öµÚÒ»¸ö·ûºÏÌõ¼şµÄÊı×é³ÉÔ±¡£ËüµÄ²ÎÊıÊÇÒ»¸ö»Øµ÷º¯Êı£¬ËùÓĞÊı×é³ÉÔ±ÒÀ´ÎÖ´ĞĞ¸Ã»Øµ÷º¯Êı£¬Ö±µ½ÕÒ³öµÚÒ»¸ö·µ»ØÖµÎªtrueµÄ³ÉÔ±£¬È»ºó·µ»Ø¸Ã³ÉÔ±¡£Èç¹ûÃ»ÓĞ·ûºÏÌõ¼şµÄ³ÉÔ±£¬Ôò·µ»Øundefined¡£
+æ•°ç»„å®ä¾‹çš„findæ–¹æ³•ï¼Œç”¨äºæ‰¾å‡ºç¬¬ä¸€ä¸ªç¬¦åˆæ¡ä»¶çš„æ•°ç»„æˆå‘˜ã€‚å®ƒçš„å‚æ•°æ˜¯ä¸€ä¸ªå›è°ƒå‡½æ•°ï¼Œæ‰€æœ‰æ•°ç»„æˆå‘˜ä¾æ¬¡æ‰§è¡Œè¯¥å›è°ƒå‡½æ•°ï¼Œç›´åˆ°æ‰¾å‡ºç¬¬ä¸€ä¸ªè¿”å›å€¼ä¸ºtrueçš„æˆå‘˜ï¼Œç„¶åè¿”å›è¯¥æˆå‘˜ã€‚å¦‚æœæ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„æˆå‘˜ï¼Œåˆ™è¿”å›undefinedã€‚
 var arry = [1, 2, 234, 5, 78, 879, 6, 12, 2, 2, 2]
 let res = arry.find((item, index) => {
-    return item > 1;  //ÕÒµ½·ûºÏµÄºó  ºóÃæµÄ²»×ßÁË
+    return item > 1;  //æ‰¾åˆ°ç¬¦åˆçš„å  åé¢çš„ä¸èµ°äº†
 });
 console.log(res);//2
 
 let res1=arry.findIndex((item,index)=>{
     return item=="78"
 })
-console.log(res1);//4   -----·µ»ØµÄË÷Òı
+console.log(res1);//4   -----è¿”å›çš„ç´¢å¼•
 
-6 indexOfºÍincludes----------¿ÉÒÔ¼ì²â NAN
-indexOf---------ÕÒµ½ÁË·µ»Ø-1   Ã»ÕÒµ½ !=-1
-includes--------ÊÇ·ñ°üº¬   ·µ»Øtrue  false
+6 indexOfå’Œincludes----------å¯ä»¥æ£€æµ‹ NaN
+indexOf---------æ‰¾åˆ°äº†è¿”å›-1   æ²¡æ‰¾åˆ° !=-1
+includes--------æ˜¯å¦åŒ…å«   è¿”å›true  false
 
-7 entries()¼üÖµ¶Ô  keys()¼ü  values()Öµ------------²»¸Ä±äÔ­Êı×é
+7 entries()é”®å€¼å¯¹  keys()é”®  values()å€¼------------ä¸æ”¹å˜åŸæ•°ç»„
 let arry1=[1, 2, 234, 5, 78, 879, 6, 12, 2, 2, 2];
 let arry2=arry1.entries();
 console.log(arry2)//Array Iterator {}
 for(var key of arry2){
     console.log(key);//[0, 1]  [1, 2]  [2, 234] [3, 5]  [4, 78]
 }
-keysºÍ valuesÍ¬Àí
+keyså’Œ valuesåŒç†
 
 
-ES6¶ÔÏó£º
-a ÊôĞÔÃû¼òĞ´£º
+ES6å¯¹è±¡ï¼š
+a å±æ€§åç®€å†™ï¼š
 function  f(x,y){
         return {x,y}
 }
 console.log(f(1,2));// {x: 1, y: 2}
 
-b  Object.is------------¶Ô±ÈÁ½¸öÖµÊÇ·ñÏàµÈ
+b  Object.is------------å¯¹æ¯”ä¸¤ä¸ªå€¼æ˜¯å¦ç›¸ç­‰
 console.log(-0===+0);   // true
 console.log(Object.is(+0,-0));  //false
 console.log(NaN===NaN);   //false
@@ -229,7 +266,7 @@ console.log(Object.is(NaN,NaN)); // true
 console.log({}==={});//false
 console.log(Object.is({},{}));//false
 
-c   Object.assign(target,source,source...)-----------½«souce¶ÔÏóÀïµÄÊôĞÔÃ¶¾ÙÌæ»»target¶ÔÏó  Èç¹ûkeyÖµÔÚtargetÀïÒÑ´æÔÚ»á¸²¸Çtarget    target»á±»¸Ä±ä
+c   Object.assign(target,source,source...)-----------å°†souceå¯¹è±¡é‡Œçš„å±æ€§æšä¸¾æ›¿æ¢targetå¯¹è±¡  å¦‚æœkeyå€¼åœ¨targeté‡Œå·²å­˜åœ¨ä¼šè¦†ç›–target    targetä¼šè¢«æ”¹å˜
 let obj1={x:'x'}
 let obj2={y:'y'}
 let obj3={x:'x2'}
@@ -241,14 +278,14 @@ console.log(obj4)  //{x: "x2", y: "y"}
 
 
 
-setºÍ map
-set----ºÍÊı×éÀàËÆ  Ö»²»¹ıÀïÃæ²»ÄÜÓĞÖØ¸´µÄÊı¾İ
+setå’Œ map
+set----å’Œæ•°ç»„ç±»ä¼¼  åªä¸è¿‡é‡Œé¢ä¸èƒ½æœ‰é‡å¤çš„æ•°æ®
 let obj={
     a:"xxx"
 }
 var s=new  Set([1,2,1,1,1,obj,obj,{},{},undefined,undefined,NaN,NaN,null,null]);
 console.log(s,s.length,s.size);
-½á¹û£º0:1
+ç»“æœï¼š0:1
   1. 1:2
   2. 2:Object
   3. 3:Object
@@ -257,20 +294,20 @@ console.log(s,s.length,s.size);
   6. 6:NaN
   7. 7:null
 undefined 8
------Ã»ÓĞlenghtÊôĞÔ  sizeÓĞ ¸úlength²î²»¶à  --------¶ÔÏóÓÀÔ¶²»ÏàµÈ
+-----æ²¡æœ‰lenghtå±æ€§  sizeæœ‰ è·Ÿlengthå·®ä¸å¤š  --------å¯¹è±¡æ°¸è¿œä¸ç›¸ç­‰
 
-s.add({a:'sadfad'})---------ÀàËÆÓÚpush
-s.delete("2")--------------É¾³ı ·µ»Ø true false  ÓĞ·µ»Øtrue   Ô­Êı×é·¢Éú¸Ä±ä
-ÓÃsetÉèÖÃµÄÊı×éÒ²ÓĞ keys  values entires·½·¨
+s.add({a:'sadfad'})---------ç±»ä¼¼äºpush
+s.delete("2")--------------åˆ é™¤ è¿”å› true false  æœ‰è¿”å›true   åŸæ•°ç»„å‘ç”Ÿæ”¹å˜
+ç”¨setè®¾ç½®çš„æ•°ç»„ä¹Ÿæœ‰ keys  values entiresæ–¹æ³•
 
-ÀûÓÃsetÇó¼¯ºÏ----------------½»¼¯  ²î¼¯  ²¢¼¯
+åˆ©ç”¨setæ±‚é›†åˆ----------------äº¤é›†  å·®é›†  å¹¶é›†
 
-½»¼¯£º
+äº¤é›†ï¼š
 let arr1=new Set([1,3,5,7]);
 let arr2=new Set([2,3,4,8]);
 let jj=new Set([...arr1].filter((value)=>arr2.has(value)));
-console.log(jj);//Set(1) {3}-----ÓĞÒ»¸ö½»¼¯  ÖµÎª3
-×¢Òâ ÓÃnew Set()³öÀ´µÄ²ÅÓĞhas ·½·¨
+console.log(jj);//Set(1) {3}-----æœ‰ä¸€ä¸ªäº¤é›†  å€¼ä¸º3
+æ³¨æ„ ç”¨new Set()å‡ºæ¥çš„æ‰æœ‰has æ–¹æ³•
 
 let cj=new Set([...arr1].filter((value)=>!arr2.has(value)));
 console.log(cj);//Set(3) {1, 5, 7}   
@@ -278,20 +315,20 @@ console.log(cj);//Set(3) {1, 5, 7}
 let bj=new Set([...arr1,...arr2]);
 console.log(bj);
 
-Map·½·¨ -----------ÀàËÆÓënew ³öÀ´Ò»¸öjson
+Mapæ–¹æ³• -----------ç±»ä¼¼ä¸new å‡ºæ¥ä¸€ä¸ªjson
 var map=new Map();
 map.set('aaa',{name:'sign'});
 map.set('bbb',{name:'zero'});
 console.log(map);// Map(2) {"aaa" => Object {name: "sign"}, "bbb" => Object {name: "zero"}}
-ÆäËû£º  
-map.size---------  ·µ»Ø³¤¶È
-map.has(str)-----------ÅĞ¶ÏÊÇ·ñÓĞ ·µ»Øtrue false
-map.delete(str)--------É¾³ı
-map.clear()-----------Çå¿Õ
+å…¶ä»–ï¼š  
+map.size---------  è¿”å›é•¿åº¦
+map.has(str)-----------åˆ¤æ–­æ˜¯å¦æœ‰ è¿”å›true false
+map.delete(str)--------åˆ é™¤
+map.clear()-----------æ¸…ç©º
 
-promise--------------µ½´ïÄ³ÖÖ×´Ì¬²ÅÖ´ĞĞ  ÀàËÆÓÚ³ĞÅµ
+promise--------------åˆ°è¾¾æŸç§çŠ¶æ€æ‰æ‰§è¡Œ  ç±»ä¼¼äºæ‰¿è¯º
 
-Ğ´·¨£º
+å†™æ³•ï¼š
 function testPromise(ready) {
     return new Promise(function(resolve,reject){
         if(ready) {
@@ -301,19 +338,19 @@ function testPromise(ready) {
         }
     });
 };
-// ·½·¨µ÷ÓÃ
+// æ–¹æ³•è°ƒç”¨
 testPromise(true).then(function(msg){
     console.log(msg);
 },function(error){
     console.log(error);
 });
-»òÕß£º
+æˆ–è€…ï¼š
 function  testPromise1(ready) {
     return new Promise(function(resolve,reject){
         if(ready){
-            resolve('³É¹¦ÁË')
+            resolve('æˆåŠŸäº†')
         }else{
-            reject("Ê§°ÜÁË");
+            reject("å¤±è´¥äº†");
         }
     }).then(function(msg){
         alert(msg)
@@ -322,13 +359,3 @@ function  testPromise1(ready) {
     })
 }
 testPromise1(true)
-
-
-
-
-
-
-
-
-
-
